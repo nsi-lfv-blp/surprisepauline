@@ -22,7 +22,7 @@ function copyotp() {
 	alert(copyText.value + " à été copié!");
 }
 
-function encode() {
+function encode(mode) {
 	var inpt = document.getElementById("message").value;
 	var oupt = document.getElementById("output");
 	var fmsg = "";
@@ -48,7 +48,7 @@ function encode() {
 		}
 	}
 	
-	oupt.value = fmsg;
+	return fmsg;
 }
 
 let mode = "W";
@@ -82,16 +82,15 @@ function changeMode(){
 }
 
 function speak() {
-	if (mode == "R") {
-		var msg = new SpeechSynthesisUtterance();
-		msg.lang = 'fr-FR';
-		msg.text = document.getElementById("output").value;
-		window.speechSynthesis.speak(msg);
-	}
+	var msg = new SpeechSynthesisUtterance();
+	msg.lang = 'fr-FR';
+	msg.text = encode("R");
+	window.speechSynthesis.speak(msg);
+	console.log("pipi");
 }
 
-document.getElementById("message").oninput = function() {encode()}
+document.getElementById("message").oninput = function() {document.getElementById("output").value = encode(mode)}
 document.getElementById("copy").onclick = function() {copyotp()}
-document.getElementById("tts").onclick = function() {speak('hello world')}
+document.getElementById("tts").onclick = function() {speak()}
 document.getElementById("output").onclick = function() {changeMode()}
 
