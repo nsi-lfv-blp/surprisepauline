@@ -85,7 +85,6 @@ function speak() {
 	msg.lang = 'fr-FR';
 	msg.text = encode("R");
 	window.speechSynthesis.speak(msg);
-	console.log("pipi");
 }
 
 document.getElementById("message").oninput = function() {document.getElementById("output").value = encode()}
