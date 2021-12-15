@@ -81,6 +81,17 @@ function changeMode(){
 	encode();
 }
 
+function speak() {
+	if (mode == "R") {
+		var msg = new SpeechSynthesisUtterance();
+		msg.lang = 'fr-FR';
+		msg.text = document.getElementById("output").value;
+		window.speechSynthesis.speak(msg);
+	}
+}
+
 document.getElementById("message").oninput = function() {encode()}
 document.getElementById("copy").onclick = function() {copyotp()}
+document.getElementById("tts").onclick = function() {speak('hello world')}
 document.getElementById("output").onclick = function() {changeMode()}
+

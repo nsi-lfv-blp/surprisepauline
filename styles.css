@@ -41,7 +41,13 @@ button:active {
 }
 
 #copy {
-	width: 200px;
+	width: 45px;
 	height: 45px;
 	margin: 1%;
+}
+
+#tts {
+	width: 45px;
+	height: 45px;
+	margin: 0;
 }

@@ -11,7 +11,11 @@
 		<form id="translator">
 			<textarea id="message" rows=10 placeholder="Le message ici" autofocus required></textarea><br>
 			<textarea id="output" rows=10 placeholder="" readonly></textarea><br>
-			<button type="button" id="copy">Copier le résultat</button>
+			<button type="button" id="copy">
+				<span style="font-size: .875em; margin-right: .125em; position: relative; top: -.25em; left: -.125em">
+				📄<span style="position: absolute; top: .25em; left: .25em">📄</span></span>
+			</button>
+			<button type="button" id="tts">🔊</button>
 		</form>
 	</div>
 	<script src="scripts.js"></script>
