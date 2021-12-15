@@ -22,14 +22,13 @@ function copyotp() {
 	alert(copyText.value + " à été copié!");
 }
 
-function encode(mode) {
+function encode(cmode = mode) {
 	var inpt = document.getElementById("message").value;
 	var oupt = document.getElementById("output");
 	var fmsg = "";
-	
-	if (mode === "W"){
+	if (cmode == "W"){
 		var dic = mondic;
-	} else if (mode === "R"){
+	} else if (cmode == "R"){
 		var dic = dicparl;
 	};
 	
@@ -78,7 +77,7 @@ function changeBorder (cmode){
 function changeMode(){
 	mode = optmode(mode);
 	changeBorder(mode);
-	encode();
+	document.getElementById("output").value = encode();
 }
 
 function speak() {
@@ -89,7 +88,7 @@ function speak() {
 	console.log("pipi");
 }
 
-document.getElementById("message").oninput = function() {document.getElementById("output").value = encode(mode)}
+document.getElementById("message").oninput = function() {document.getElementById("output").value = encode()}
 document.getElementById("copy").onclick = function() {copyotp()}
 document.getElementById("tts").onclick = function() {speak()}
 document.getElementById("output").onclick = function() {changeMode()}
