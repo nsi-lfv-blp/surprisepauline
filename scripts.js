@@ -81,10 +81,17 @@ function changeMode(){
 }
 
 function speak() {
-	var msg = new SpeechSynthesisUtterance();
-	msg.lang = 'fr-FR';
-	msg.text = encode("R");
-	window.speechSynthesis.speak(msg);
+	let myMessage = document.getElementById("message").value;
+	if (myMessage.replace(/\W*/gi,'').match(/ahnonnonnonmadame/gi)){
+		let audio = new Audio('ahnonon.mp3');
+		audio.play();
+
+	} else {
+		var msg = new SpeechSynthesisUtterance();
+		msg.lang = 'fr-FR';
+		msg.text = encode("R");
+		window.speechSynthesis.speak(msg);
+	}
 }
 
 document.getElementById("message").oninput = function() {document.getElementById("output").value = encode()}
