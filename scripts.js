@@ -85,6 +85,8 @@ function speak() {
 	if (myMessage.replace(/\W*/gi,'').match(/ahnonnonnonmadame/gi)){
 		let audio = new Audio('ahnonon.mp3');
 		audio.play();
+		window.setTimeout(function(){audio.pause()},1);
+		audio.play();
 
 	} else {
 		var msg = new SpeechSynthesisUtterance();
