@@ -83,9 +83,6 @@ function changeMode(){
 function speak() {
 	let myMessage = document.getElementById("message").value;
 	if (myMessage.replace(/\W*/gi,'').match(/ahnonnonnonmadame/gi)){
-		let audio = new Audio('ahnonon.mp3');
-		audio.play();
-		window.setTimeout(function(){audio.pause()},1);
 		audio.play();
 
 	} else {
