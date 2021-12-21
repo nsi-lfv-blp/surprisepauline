@@ -82,7 +82,7 @@ function changeMode(){
 
 function speak() {
 	let myMessage = document.getElementById("message").value;
-	if (myMessage.replace(/\W*/gi,'').match(/ahnonnonnonmadame/gi)){
+	if (myMessage.replace(/\W*/gi,'').match(/^ah(non)+madame$/gi)){
 		let audio = new Audio('ahnonon.mp3');
 		audio.play();
 
